@@ -10,7 +10,6 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 from sklearn.model_selection import cross_validate
-from lightgbm import LGBMClassifier
 import plotly.express as px
 import pickle
 import shap
@@ -82,11 +81,11 @@ def get_data(finename):
 
 # Managing data import/export
 
-PATH = 'C:\\Users\\Administrator\\' # os.getcwd()+'/' # change for online app or local
-FILENAME_TRAIN = PATH+'train_Xy_sample.csv' # sample of train set for online version 25MB
+PATH = '/app/septiemeprojet/'
+FILENAME_TRAIN = PATH+'train_Xy_sample.csv' 
 FILENAME_TEST = PATH+'X_test_sample.csv'
 df_description=get_data( PATH +"HomeCredit_columns_description.csv")
-df_train = get_data(FILENAME_TRAIN) # load trainset data in a df
+df_train = get_data(FILENAME_TRAIN)
 df_test = get_data(FILENAME_TEST)
 FILENAME_MODEL = PATH+'finalized_model.sav'
 
@@ -119,7 +118,7 @@ model_predict = st.container()
 
 from PIL import Image
 
-image1 = Image.open('C:\\Users\\Administrator\\Global_feature_importance.png')
+image1 = Image.open('/app/project_7_oc_dashboard/Global_feature_importance.png')
 
 
 if rad == ' Home': # with this we choose which container to display on the screen
