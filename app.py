@@ -61,7 +61,7 @@ df_train=pd.read_csv("https://raw.githubusercontent.com/housnaki/septiemeprojet/
 df_test = pd.read_csv("https://raw.githubusercontent.com/housnaki/septiemeprojet/main/X_test_sample.csv",encoding="utf-8")
 df_description = pd.read_csv("https://raw.githubusercontent.com/housnaki/septiemeprojet/main/HomeCredit_columns_description.csv",encoding='cp1252')
 #FILENAME_MODEL = "mymodel1.pkl"
-load_clf = pickle.load(open('mymodel1.pkl', 'rb'))
+load_clf = pickle.load(open('finalized_model.sav', 'rb'))
 sb = st.sidebar # add a side bar
 
 sb.image('https://user.oc-static.com/upload/2019/02/25/15510866018677_logo%20projet%20fintech.png', width=280)
