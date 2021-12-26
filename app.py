@@ -84,8 +84,7 @@ def get_data(finename):
 df_train=pd.read_csv("https://raw.githubusercontent.com/housnaki/septiemeprojet/main/train_Xy_sample.csv",encoding="utf-8")
 df_test = pd.read_csv("https://raw.githubusercontent.com/housnaki/septiemeprojet/main/X_test_sample.csv",encoding="utf-8")
 df_description = pd.read_csv("https://raw.githubusercontent.com/housnaki/septiemeprojet/main/HomeCredit_columns_description.csv",encoding='cp1252')
-FILENAME_MODEL = "https://github.com/housnaki/septiemeprojet/blob/main/finalized_model.sav"
-model2 = load_model('finalized_model')
+FILENAME_MODEL = "main/finalized_model.sav"
 sb = st.sidebar # add a side bar
 
 sb.image('https://user.oc-static.com/upload/2019/02/25/15510866018677_logo%20projet%20fintech.png', width=280)
@@ -206,7 +205,7 @@ if rad == 'Client prediction':
         if col2.button('Predict & plot!'):
 
             try: 
-                model = pickle.load(open(modelEssaiP7, 'rb'))
+                model = pickle.load(open(FILENAME_MODEL, 'rb'))
             except:
                 raise 'You must train the model first.'
             # finding client row index in testset
