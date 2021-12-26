@@ -207,7 +207,7 @@ if rad == 'Client prediction':
         if col2.button('Predict & plot!'):
 
             try: 
-                model = pickle.load(open(FILENAME_MODEL, 'rb'))
+                model = pickle.load(open("finalized_model3.sav", 'rb'))
             except:
                 raise 'You must train the model first.'
             # finding client row index in testset
