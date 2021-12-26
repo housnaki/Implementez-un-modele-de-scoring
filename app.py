@@ -115,7 +115,7 @@ model_predict = st.container()
 
 from PIL import Image
 
-image1 = Image.open('/app/project_7_oc_dashboard/Global_feature_importance.png')
+#image1 = Image.open('/app/project_7_oc_dashboard/Global_feature_importance.png')
 
 
 if rad == ' Home': # with this we choose which container to display on the screen
@@ -132,7 +132,7 @@ if rad == ' Home': # with this we choose which container to display on the scree
         
         
         st.subheader("Here's the global features importance of data.")        
-        st.image(image1, width=700)
+        st.image("https://github.com/housnaki/septiemeprojet/blob/main/Global_feature_importance.png", width=700)
         
         st.header("**Overview of exploratory data analysis.** \n ----")
         st.subheader("Plotting distributions of target and some features.")
