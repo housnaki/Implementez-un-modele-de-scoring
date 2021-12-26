@@ -81,13 +81,13 @@ def get_data(finename):
 
 # Managing data import/export
 
-PATH = '/app/septiemeprojet/'
-FILENAME_TRAIN = PATH+'train_Xy_sample.csv' 
-FILENAME_TEST = PATH+'X_test_sample.csv'
+PATH = "/app/septiemeprojet/"
+FILENAME_TRAIN = PATH+"train_Xy_sample.csv" 
+FILENAME_TEST = PATH+"X_test_sample.csv"
 df_description=get_data( PATH +"HomeCredit_columns_description.csv")
 df_train = get_data(FILENAME_TRAIN)
 df_test = get_data(FILENAME_TEST)
-FILENAME_MODEL = PATH+'finalized_model.sav'
+FILENAME_MODEL = PATH+"finalized_model.sav"
 
   
 sb = st.sidebar # add a side bar
