@@ -181,14 +181,14 @@ if rad == 'Client prediction':
 
         if col2.button('Predict & plot!'):
 
-            try: 
-                model = pickle.load(open(FILENAME_MODEL, 'rb'))
-            except:
-                raise 'You must train the model first.'
+ #           try: 
+ #               model = pickle.load(open(FILENAME_MODEL, 'rb'))
+ #           except:
+ #               raise 'You must train the model first.'
             # finding client row index in testset
             idx = df_test.SK_ID_CURR[df_test.SK_ID_CURR == input_client].index
             client = df_test2.iloc[idx, :]
-            y_prob = model.predict_proba(client)
+            y_prob = load_clf.predict_proba(client)
 
              
             if (y_prob).T[1] < (y_prob.T)[0]:
@@ -201,7 +201,7 @@ if rad == 'Client prediction':
 
             st.subheader(f"**SHAP explanation force plots for the client.**")
 
-            explainer = shap.TreeExplainer(model)
+            explainer = shap.TreeExplainer(load_clf)
             shap_values = explainer.shap_values(client)
             shap.initjs()
             st_shap(shap.force_plot(explainer.expected_value[1], shap_values[1], client))
