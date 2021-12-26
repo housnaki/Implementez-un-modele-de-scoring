@@ -5,3 +5,4 @@ scikit-learn==0.23.2
 plotly==5.3.1
 shap==0.40.0
 interpret== 0.2.7
+pickleshare== 0.7.5
