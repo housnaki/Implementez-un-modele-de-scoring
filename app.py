@@ -79,15 +79,12 @@ def get_data(finename):
     df = reduce_memory_usage(df)
     return df
 
-# Managing data import/export
+# data import
 
-PATH = "/app/septiemeprojet/"
-FILENAME_TRAIN = PATH+"train_Xy_sample.csv" 
-FILENAME_TEST = PATH+"X_test_sample.csv"
-df_description=get_data( PATH +"HomeCredit_columns_description.csv")
-df_train = get_data(FILENAME_TRAIN)
-df_test = get_data(FILENAME_TEST)
-FILENAME_MODEL = PATH+"finalized_model.sav"
+df_description=get_data( "https://raw.githubusercontent.com/housnaki/septiemeprojet/main/train_Xy_sample.csv")
+df_train = get_data("https://raw.githubusercontent.com/housnaki/septiemeprojet/main/X_test_sample.csv")
+df_test = get_data("https://raw.githubusercontent.com/housnaki/septiemeprojet/main/HomeCredit_columns_description.csv")
+FILENAME_MODEL = "https://github.com/housnaki/septiemeprojet/blob/main/finalized_model.sav"
 
   
 sb = st.sidebar # add a side bar
