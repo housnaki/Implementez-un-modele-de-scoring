@@ -53,38 +53,14 @@ def histogram(df, x='str', legend=True, client=None):
         fig.add_vline(x=vline, line_width=3, line_dash="dash", line_color="black")
     return fig  
 
-def reduce_memory_usage(df):  
-  
-    numeric2reduce = ["int16", "int32", "int64", "float64"]
-    for col, col_type in df.dtypes.iteritems():
-        if col_type == "object":
-            df[col] = df[col].astype("category")
-        elif col_type in numeric2reduce:
-            downcast = "integer" if "int" in str(col_type) else "float"
-            df[col] = pd.to_numeric(df[col], downcast=downcast)
-    return df 
 
-
-
-def get_data(finename):
-    df = pd.read_csv(finename,
-                    sep=',',
-                    low_memory=False,
-                    verbose=False,
-                    nrows = 20000,
-                    encoding='ISO-8859-1',
-                    dtype={'Special': 'object'}
-                    )
-    
-    df = reduce_memory_usage(df)
-    return df
 
 # data import
 
 df_train=pd.read_csv("https://raw.githubusercontent.com/housnaki/septiemeprojet/main/train_Xy_sample.csv",encoding="utf-8")
 df_test = pd.read_csv("https://raw.githubusercontent.com/housnaki/septiemeprojet/main/X_test_sample.csv",encoding="utf-8")
 df_description = pd.read_csv("https://raw.githubusercontent.com/housnaki/septiemeprojet/main/HomeCredit_columns_description.csv",encoding='cp1252')
-FILENAME_MODEL = "septiemeprojet/finalized_model.sav"
+FILENAME_MODEL = "finalized_model.sav"
 sb = st.sidebar # add a side bar
 
 sb.image('https://user.oc-static.com/upload/2019/02/25/15510866018677_logo%20projet%20fintech.png', width=280)
