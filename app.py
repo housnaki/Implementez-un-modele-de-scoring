@@ -84,8 +84,8 @@ def get_data(finename):
 df_train=pd.read_csv("https://raw.githubusercontent.com/housnaki/septiemeprojet/main/train_Xy_sample.csv",encoding="utf-8")
 df_test = pd.read_csv("https://raw.githubusercontent.com/housnaki/septiemeprojet/main/X_test_sample.csv",encoding="utf-8")
 df_description = pd.read_csv("https://raw.githubusercontent.com/housnaki/septiemeprojet/main/HomeCredit_columns_description.csv",encoding='cp1252')
-FILENAME_MODEL = "ghttps://github.com/housnaki/septiemeprojet/blob/main/finalized_model.sav"
-
+FILENAME_MODEL = "https://github.com/housnaki/septiemeprojet/blob/main/finalized_model.sav"
+load_clf = pickle.load(open('finalized_model.sav', 'rb'))
   
 sb = st.sidebar # add a side bar
 
