@@ -57,8 +57,18 @@ bootstrap: définit si chaque bootstrap se fait sur tout le jeu de donnée ou ju
 
 ### Shap (Feature importance locale):
 Le module SHAP peut être utilisé (il est indépendant du modèle) pour calculer les feature importance à partir du Random Forest. Il utilise les valeurs de Shapley Values de la théorie des jeux pour estimer la contribution de chaque feature à la prédiction. Il peut être facilement installé (pip install shap) et utilisé avec scikit-learn Random Forest
+Dans le dashboard les prédictions sont facilement interprétées par:
+-SHAP explanation force plot
+-SHAP explanation summary plot
 
+## Dashboard.
+### Implémentation.
 
-![image](https://user-images.githubusercontent.com/94060093/147423397-41c69588-b0d8-4f14-a403-31ce37cc74ac.png)
-![image](https://user-images.githubusercontent.com/94060093/147423401-2101ab5d-ff42-42f6-a637-fb99cb5f7e35.png)
+Le Dashboard interactif a été implémenté via **Streamlit** et codé en Python. Les packages nécessaires pour exécuter cette application sont répertoriés dans le fichier *requirements.txt*. L'application principale *app.py* est livrée avec les éléments suivants :
 
+- Les données se trouvent dans "train_Xy_sample et X_test_sample"qui sont des echantillons car les fichiers entiers sont très gros en terme de mémoire.
+
+- Le fichier : *finalized_model.sav*, contient le modèle entraîné. Le package *pickle* a été utilisé pour exporter le modèle après validation croisée et apprentissage.
+
+## Déploiement:
+J'ai déployé mon application via Heroku
