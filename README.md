@@ -20,5 +20,20 @@
 - 1/Télecharger les données
 - 2/Concaténer les différents tableaux
 - 3/Créer de nouvelles features
-![image](https://user-images.githubusercontent.com/94060093/147422734-3d6981d2-fd11-41a3-a453-90cd9866b97f.png)
+
+### Imbalanced data:
+- On remarque que la donnée à prédire "Target" est fortement désequilibrée (92% de bon clients"class:0") 
+
+![image](https://user-images.githubusercontent.com/94060093/147422796-0d9d0daa-53e9-4231-a37e-a57beaef89bd.png)
+
+### simulation et comparaison des modèles:
+- Comparaison de 4 modèles à un algorithme de base "DummyClassifier"; à ces modèles j'ai appliqué un "class_weight" pour traiter les classes non équilibrées/
+- les modèles utilisés sont:
+- XGBClassifier(scale_pos_weight=9)
+- DecisionTreeClassifier(class_weight='balanced')
+- RandomForestClassifier(class_weight='balanced')
+- BalancedRandomForestClassifier()
+![image](https://user-images.githubusercontent.com/94060093/147422761-f142f142-9f2e-4e7b-bde3-f5e04d85fbfc.png)
+
+
 
