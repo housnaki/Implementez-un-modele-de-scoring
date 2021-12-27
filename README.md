@@ -37,7 +37,7 @@
 
 ## Les meilleurs résultats sont obtenus par le modèle:
 "Balanced Random Forest"
-## ## Fonction de coût métier – optimisation du modèle d’un point de vue métier
+## Fonction de coût métier – optimisation du modèle d’un point de vue métier
 - Le modèle final doit pouvoir déterminer une classe 0 ou 1, ce qui implique de déterminer le seuil à partir duquel la proba calculée se transforme en classe 1 (pour un predict le seuil par défaut est 0.5).
 
 - La problématique « métier » est de prendre en compte qu’un faux positifs (bon client considéré comme mauvais = crédit non accordé à tort, donc manque à gagner de la marge pour la banque) n’a pas le même coût qu’un faux négatif (mauvais client à qui on accorde un prêt, donc perte sur le capital non remboursé). Un faux négatif est environ 10 fois plus coûteux qu’un faux positif. Les mesures techniques ne le prennent pas en compte.
@@ -45,11 +45,11 @@
 ![image](https://user-images.githubusercontent.com/94060093/147423067-16b1eb7f-1ead-45bc-8a27-8779fa864b72.png)
 
 ### Hyperparamètres à optimiser:
-n_estimators :nombre d'arbres de décision fixé à n=1000
-min_samples_split: nombres d'individus minimum pour que puisse avoir la séparation d'un noeud.
-min_samples_leaf: nombre de feuilles minimales dans un noeud
-max_features: nombre de features observées pour chaque arbre
-bootstrap: définit si chaque bootstrap se fait sur tout le jeu de donnée ou juste une partie
+- n_estimators :nombre d'arbres de décision fixé à n=1000
+- min_samples_split: nombres d'individus minimum pour que puisse avoir la séparation d'un noeud.
+- min_samples_leaf: nombre de feuilles minimales dans un noeud
+- max_features: nombre de features observées pour chaque arbre
+- bootstrap: définit si chaque bootstrap se fait sur tout le jeu de donnée ou juste une partie
 
 ## Interprétabilité du modèle:
 -Feature Importance globale:
